@@ -11,6 +11,10 @@ Currently, it is a reduction pipeline focused on the way we prepare data for spe
 
 Can extend this by, for example, adding flags at the start of the reduction notebook.
 
+#### Data Cleanup
+
+Need to include functionality for automatically recognising and assigning `IMAGETYP` based on the name of the files; currently we can only do it manually.
+
 ## Step One: Data Cleanup
 
 This pipeline handles the whole data library using the `ccdproc` class `ImageFileCollection`. This allows us for quick filtering of images based on values in the header of each file. To be able to do this in the standardised way, we need to first make sure that all images conform to some simple criteria. We employ the Jupyter Notebook `data-cleanup.ipynb` for this task. This step can be skipped if the data already conforms to the requirements.
@@ -33,7 +37,7 @@ Both of the above are in the same parent directory as our scripts. These values 
 
 ### Performing the cleanup
 
-To set the cleanup to your specific dataset, modify the script as fit. The template provided takes a set of data from `data` by following a naming scheme, and records the copy with modified header to `data-cleaned` following a naming scheme.
+The template provided takes a set of data from `data` by following a naming scheme, and records the copy with modified header to `data-cleaned` following a naming scheme. Currently, we have to manually provide the naming template, number of images, and type of image.
 
 ## Step Two: Data Reduction
 
