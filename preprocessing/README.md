@@ -1,6 +1,6 @@
-# Pipeline for data reduction using `ccdops`
+# Pipeline for data preprocessing using `ccdops`
 
-This file contains the general description of the data pipeline that we will use for the initial ccd reduction to prepare data for analysis.
+This file contains the general description of the data pipeline that we will use for the initial CCD reduction to prepare data for analysis, whether it be photometry or spectra extraction.
 
 ### Things to do:
 
