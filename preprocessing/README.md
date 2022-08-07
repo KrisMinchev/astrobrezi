@@ -15,6 +15,10 @@ Can extend this by, for example, adding flags at the start of the reduction note
 
 Need to include functionality for automatically recognising and assigning `IMAGETYP` based on the name of the files; currently we can only do it manually.
 
+#### Data Reduction
+
+Need to make sure we create master darks correctly with respect to the pixel-by-pixel averaging.
+
 ## Step One: Data Cleanup
 
 This pipeline handles the whole data library using the `ccdproc` class `ImageFileCollection`. This allows us for quick filtering of images based on values in the header of each file. To be able to do this in the standardised way, we need to first make sure that all images conform to some simple criteria. We employ the Jupyter Notebook `data-cleanup.ipynb` for this task. This step can be skipped if the data already conforms to the requirements.
@@ -41,3 +45,12 @@ The template provided takes a set of data from `data` by following a naming sche
 
 ## Step Two: Data Reduction
 
+This step of the process is done inside the notebook `pipeline-preproc.ipynb`. The pipeline loads the images with the filled headers as an `ImageFileCollection`. Then, we can separate the process in two main steps.
+
+### Master dark creation
+
+The notebook computes master darks using `ccdproc.combine()` and records the master darks in folder `data-reduced`. There are several ways to do the averaging of pixels. The current implemented one is the method given in the manual for `ccdproc` i.e. averaging of pixel values with sigma clipping for extreme values.
+
+### Master dark subtraction
+
+The notebook goes over all science and calibration images and subtracts the correct master dark based on the exposure time of the image. The subtracted images are once again saved in the `data-reduced` folder.
