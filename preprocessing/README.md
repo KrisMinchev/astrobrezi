@@ -1,8 +1,10 @@
 # Pipeline for data preprocessing using `ccdops`
 
-This file contains the general description of the data pipeline that we will use for the initial CCD reduction to prepare data for analysis, whether it be photometry or spectra extraction.
+## About
 
-### Things to do:
+This file contains the general description of the data pipeline that we will use for the initial CCD reduction to prepare data for analysis, whether it be photometry or spectra extraction. It does not depend on the observational equipment so it can be used for data outside of the Beli Brezi camp.
+
+### Things to do
 
 Currently, it is a reduction pipeline focused on the way we prepare data for spectroscopic reduction. We should extend it to general reduction in the future by adding:
 
