@@ -38,6 +38,6 @@ This routine extracts the 1D stellar spectra from the 2D image produced by the p
 
 This notebook was kindly provided by @mimirerelala.
 
-## 2D to 1D extraction of planetary spectra (extended objects): `spec-planet-extract.ipynb`
+## 2D to 1D extraction of planetary spectra (extended objects): `spec-edge-fit`
 
-Need to include from the project for Varna conf.
+This one traces the signall of the extended object, and fits a quadratic curve to it. Then, it uses the quadratic curve to sum values along to extract the 1D spectrum at that point. Note: requires a significant amount of signal on the outermost parts to be useful for velocity measurements (low S/N).
