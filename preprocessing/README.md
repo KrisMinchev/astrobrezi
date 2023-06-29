@@ -9,11 +9,11 @@ Currently, it is a reduction pipeline focused on the way we prepare data for spe
 - biasing
 - flat field reduction
 
-Can extend this by, for example, adding flags at the start of the reduction notebook.
+Can extend this by, for example, adding flags at the start of the reduction notebook. Procedure should be similar to the master darks, so extending should not take too much work; in addition, some steps in the documentation related to bias/flat reduction are already sprinkled in as comments within the procedure.
 
 #### Data Cleanup
 
-Need to include functionality for automatically recognising and assigning `IMAGETYP` based on the name of the files; currently we can only do it manually.
+Need to include functionality for automatically recognising and assigning `IMAGETYP` based on the name of the files; currently we can only do it manually by editing some strings in the notebook.
 
 #### Data Reduction
 
@@ -28,7 +28,7 @@ We need to make sure of two things:
 - the header has a category named `'IMAGETYP'`, which specifies the type of image. We can choose between `['DARK', 'LIGHT', 'CALIB']` for the dark, science, and calibration lamp images respectively.
 - the header has a category named `'BUNIT' = ADU`, which specifies the unit of signal in the images. This is needed so that images can be loaded as a `CCDData` type and the `ccdproc` functions can perform their operations.
 
-You can find more information about how this is done [here](https://www.astropy.org/ccd-reduction-and-photometry-guide/v/dev/notebooks/01-11-reading-images.html).
+You can find more information about how this is done [here](https://www.astropy.org/ccd-reduction-and-photometry-guide/v/dev/notebooks/01-11-reading-images.html). If the files already conform to the specifications above, we can skip this script and move on to Step Two: Data Reduction.
 
 ### Specifying working directory
 
