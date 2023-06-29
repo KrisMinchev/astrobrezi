@@ -1,0 +1,17 @@
+[Description]
+intsrument = LHIRESIII
+grating = 150l/mm
+camera = SBIG ST-1603ME
+
+[Detector]
+pixel_scale = 0.722
+xpixels = 1530
+ypixels = 1020
+
+[Grism]
+dispersion_direction = RL
+linear_dispersion = 3.
+reference_lambda = 6678.280
+
+[Files]
+# data_hdu = Primary
